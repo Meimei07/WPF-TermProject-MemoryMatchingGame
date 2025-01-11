@@ -1,0 +1,17 @@
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\bin\Debug\WPF-TermProject-MemoryGame.exe.config
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\bin\Debug\WPF-TermProject-MemoryGame.exe
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\bin\Debug\WPF-TermProject-MemoryGame.pdb
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.csproj.AssemblyReference.cache
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\MainWindow.g.cs
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\App.g.cs
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame_MarkupCompile.cache
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame_MarkupCompile.lref
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\MainWindow.baml
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.g.resources
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF_TermProject_MemoryGame.Properties.Resources.resources
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.csproj.GenerateResource.cache
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.csproj.CoreCompileInputs.cache
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.exe
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.pdb
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\frmGameView.g.cs
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\frmGameView.baml

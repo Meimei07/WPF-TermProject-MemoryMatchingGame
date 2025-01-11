@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F9CFFF9-A041-4BC8-9A9B-4BBA77CFB8F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WPF_TermProject_MemoryGame</RootNamespace>
+    <AssemblyName>WPF-TermProject-MemoryGame</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="frmGameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="frmGameView.xaml.cs">
+      <DependentUpon>frmGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Card.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\card1.png" />
+    <Resource Include="Images\card10.png" />
+    <Resource Include="Images\card11.png" />
+    <Resource Include="Images\card12.png" />
+    <Resource Include="Images\card13.png" />
+    <Resource Include="Images\card14.png" />
+    <Resource Include="Images\card15.png" />
+    <Resource Include="Images\card16.png" />
+    <Resource Include="Images\card17.png" />
+    <Resource Include="Images\card18.png" />
+    <Resource Include="Images\card19.png" />
+    <Resource Include="Images\card2.png" />
+    <Resource Include="Images\card20.png" />
+    <Resource Include="Images\card21.png" />
+    <Resource Include="Images\card22.png" />
+    <Resource Include="Images\card23.png" />
+    <Resource Include="Images\card24.png" />
+    <Resource Include="Images\card25.png" />
+    <Resource Include="Images\card26.png" />
+    <Resource Include="Images\card27.png" />
+    <Resource Include="Images\card28.png" />
+    <Resource Include="Images\card29.png" />
+    <Resource Include="Images\card3.png" />
+    <Resource Include="Images\card30.png" />
+    <Resource Include="Images\card31.png" />
+    <Resource Include="Images\card37.png" />
+    <Resource Include="Images\card38.png" />
+    <Resource Include="Images\card39.png" />
+    <Resource Include="Images\card4.png" />
+    <Resource Include="Images\card40.png" />
+    <Resource Include="Images\card41.png" />
+    <Resource Include="Images\card42.png" />
+    <Resource Include="Images\card43.png" />
+    <Resource Include="Images\card44.png" />
+    <Resource Include="Images\card45.png" />
+    <Resource Include="Images\card46.png" />
+    <Resource Include="Images\card47.png" />
+    <Resource Include="Images\card48.png" />
+    <Resource Include="Images\card49.png" />
+    <Resource Include="Images\card5.png" />
+    <Resource Include="Images\card50.png" />
+    <Resource Include="Images\card6.png" />
+    <Resource Include="Images\card7.png" />
+    <Resource Include="Images\card8.png" />
+    <Resource Include="Images\card9.png" />
+    <Resource Include="Images\card_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\card32.jpg" />
+    <Resource Include="Images\card33.jpg" />
+    <Resource Include="Images\card34.jpg" />
+    <Resource Include="Images\card35.jpg" />
+    <Resource Include="Images\card36.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
