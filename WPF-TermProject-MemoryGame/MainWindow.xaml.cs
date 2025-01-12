@@ -37,6 +37,9 @@ namespace WPF_TermProject_MemoryGame
 
             frmGameView frmGameView = new frmGameView(selectedGameMode, selectedPlayerMode);
             frmGameView.ShowDialog();
+
+            cmbGameMode.Text = string.Empty;
+            cmbPlayerMode.Text = string.Empty;
         }
 
         private void btnQuit_Click(object sender, RoutedEventArgs e)

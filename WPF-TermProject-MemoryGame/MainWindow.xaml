@@ -4,10 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_TermProject_MemoryGame"
-        mc:Ignorable="d"
-        WindowState="Minimized"
+        mc:Ignorable="d"     
         ResizeMode="NoResize" 
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
 
     <Window.Background>
@@ -34,7 +34,7 @@
             <TextBlock Text="Select game mode..."/>
             <ComboBox Name="cmbGameMode" 
                       Width="200" Height="35" 
-                      Margin="0,0,0,15">
+                      Margin="0,0,0,10">
                 
                 <ComboBoxItem Content="Select game mode..." IsEnabled="False"/>
                 <ComboBoxItem Content="2x2"/>

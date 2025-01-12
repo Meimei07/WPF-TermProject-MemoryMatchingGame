@@ -8,16 +8,16 @@
         WindowState="Maximized"
         Title="frmGameView" Height="450" Width="800">
 
-    <Grid>
+    <Grid Background="#dcffdb">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         
         <!--row0 player mode-->
-        <Grid Name="gridPlayerMode" Margin="20,0,20,0">
+        <Grid Name="gridPlayerMode" Margin="10,0,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.15*"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0.08*"/>

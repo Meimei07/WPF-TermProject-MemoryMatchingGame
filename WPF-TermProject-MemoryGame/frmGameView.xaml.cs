@@ -40,6 +40,7 @@ namespace WPF_TermProject_MemoryGame
         public frmGameView(string gridMode, string playerMode)
         {
             InitializeComponent();
+
             cards = new List<Card>();
             player1 = new Player(1, false); //init player1, because player1 is a default player
             
@@ -56,7 +57,7 @@ namespace WPF_TermProject_MemoryGame
             {
                 return 1;
             }
-            return 2;
+            return 2; //playerMode == "2 Players"
         }
 
         private int getGridSize(string gridMode)
@@ -89,6 +90,7 @@ namespace WPF_TermProject_MemoryGame
 
         private List<string> generateCard(int gridSize)
         {
+            //list of all image sources
             List<string> cardNames = new List<string>()
             {
                 "Images/card1.png","Images/card2.png","Images/card3.png","Images/card4.png","Images/card5.png"
@@ -102,14 +104,15 @@ namespace WPF_TermProject_MemoryGame
                 ,"Images/card41.png","Images/card42.png","Images/card43.png","Images/card44.png","Images/card45.png"
                 ,"Images/card46.png","Images/card47.png","Images/card48.png","Images/card49.png","Images/card50.png"
             };
+
             List<string> cards = new List<string>();
 
             Random random = new Random();
             cardNames = cardNames.OrderBy(c => random.Next()).ToList(); //shuffle
 
-            for(int i=0; i<gridSize/2; i++)
+            for(int i=0; i<gridSize/2; i++) //loop until gridSize/2, because only needs half of grid size, because 1 source can be used for 2 times
             {
-                if (!cards.Contains(cardNames[i])) //prevent the same card
+                if (!cards.Contains(cardNames[i])) //prevent the same card/image source
                 {
                     cards.Add(cardNames[i]);
                 }
@@ -128,12 +131,14 @@ namespace WPF_TermProject_MemoryGame
             TextBlock tbPlayer1Name = new TextBlock
             {
                 Text = "Player 1",
+                FontSize = 20,
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center
             };
             tbPlayer1Score = new TextBlock
             {
                 Text = "Score: 0",
+                FontSize = 20,
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center,
             };
@@ -167,12 +172,14 @@ namespace WPF_TermProject_MemoryGame
                 TextBlock tbPlayer2 = new TextBlock
                 {
                     Text = "Player 2",
+                    FontSize = 20,
                     HorizontalAlignment = HorizontalAlignment.Right,
                     VerticalAlignment = VerticalAlignment.Center
                 };
                 tbPlayer2Score = new TextBlock
                 {
                     Text = "Score: 0",
+                    FontSize = 20,
                     HorizontalAlignment = HorizontalAlignment.Right,
                     VerticalAlignment = VerticalAlignment.Center
                 };
@@ -201,16 +208,17 @@ namespace WPF_TermProject_MemoryGame
 
         private void AddImagesToGrid(int gridSize) 
         {
-            List<string> imageSources = generateCard(gridSize);
+            List<string> imageSources = generateCard(gridSize); //length = gridSize/2
 
-            for(int i=0; i<gridSize/2; i++)
-            {
+            //loop until gridSize/2, because if loop until gridSize, the imageSources[i] will be out of range as imageSources length = gridSize/2
+            for (int i=0; i<gridSize/2; i++) 
+            { //so loop until gridSize/2, and in each loop will add 2 objects at a time, so that cards list still has the length of gridSize that's needed
                 cards.Add(new Card { ImageFront = imageSources[i], ImageBack = "Images/card_back.png" });
                 cards.Add(new Card { ImageFront = imageSources[i], ImageBack = "Images/card_back.png" });
             }
 
             Random random = new Random();
-            cards = cards.OrderBy(c => random.Next()).ToList(); //shuffle
+            cards = cards.OrderBy(c => random.Next()).ToList(); //shuffle (optional)
 
             gridCard.Children.Clear();
 
@@ -226,7 +234,7 @@ namespace WPF_TermProject_MemoryGame
                     Source = new BitmapImage(new Uri(card.ImageBack, UriKind.Relative))
                 };
 
-                image.MouseDown += Image_MouseDown;
+                image.MouseDown += Image_MouseDown; //add method to event
 
                 image.DataContext = card;
 
@@ -256,16 +264,17 @@ namespace WPF_TermProject_MemoryGame
             {
                 Player currentPlayer = player1;
 
+                //if card is already face up or matched, can't flip card anymore
                 if (card.IsFaceUp == true || card.IsMatched == true) return;
 
                 //if == false, means can flip
                 card.IsFaceUp = true;
                 UpdateUI();
 
-                if (firstCard == null)
+                if (firstCard == null) // ==null means start off with first selection
                 {
                     firstCard = card;
-                    return;
+                    return; //return so that player can choose second card
                 }
 
                 //if firstCard != null, means firstCard is already selected
@@ -299,6 +308,7 @@ namespace WPF_TermProject_MemoryGame
             }
             else if(playerCount == 2)
             {
+                //player takes turn to pick cards
                 Player currentPlayer = player1.IsPicked == false ? player1 : player2;
 
                 if (card.IsFaceUp == true || card.IsMatched == true) return;
@@ -313,7 +323,6 @@ namespace WPF_TermProject_MemoryGame
                     return;
                 }
 
-                //if firstCard != null, means firstCard is already selected
                 secondCard = card;
 
                 if (firstCard.ImageFront == secondCard.ImageFront)
@@ -324,19 +333,12 @@ namespace WPF_TermProject_MemoryGame
                     firstCard.IsFaceUp = true;
                     secondCard.IsFaceUp = true;
 
-                    //MessageBox.Show($"player{currentPlayer.Id} matched");
-                    if(currentPlayer.Id == 1)
-                    {
-                        player1.Score++;
-                        tbPlayer1Score.Text = $"Score: {player1.Score}";
-                        //MessageBox.Show($"score:{player1.Score}");
-                    }
-                    else if(currentPlayer.Id == 2)
-                    {
-                        player2.Score++;
-                        tbPlayer2Score.Text = $"Score: {player2.Score}";
-                        //MessageBox.Show($"score:{player2.Score}");
-                    }
+                    currentPlayer.Score++;
+                    if(currentPlayer.Id == 1) 
+                        tbPlayer1Score.Text = $"Score: {player1.Score}"; 
+                    else 
+                        tbPlayer2Score.Text = $"Score: {player2.Score}"; 
+
                     playCorrectSound();
                 }
                 else
@@ -348,7 +350,9 @@ namespace WPF_TermProject_MemoryGame
                     secondCard.IsMatched = false;
                 }
 
-                player1.IsPicked = !player1.IsPicked; //player1.ispicked = !false;
+                //do this so that if isPicked==true, it'll turn false, and false turns to true
+                //ensure that only one player at time
+                player1.IsPicked = !player1.IsPicked; 
                 player2.IsPicked = !player2.IsPicked;
 
                 firstCard = secondCard = null;
@@ -404,12 +408,15 @@ namespace WPF_TermProject_MemoryGame
             }
             else if (playerCount == 2)
             {
+                //check in case there's winner even before all cards are faced up
                 if (player1.Score > cards.Count / 4) 
                 {
                     playCongratsSound();
                     MessageBox.Show("Player1 win!");
 
                     playAgainOrNot();
+                    return;
+                    
                 }
                 else if (player2.Score > cards.Count / 4)
                 {
@@ -417,10 +424,11 @@ namespace WPF_TermProject_MemoryGame
                     MessageBox.Show("Player2 win!");
 
                     playAgainOrNot();
+                    return;
                 }
 
                 bool allCardsFaceUp = true;
-                foreach (Card c in cards)//16
+                foreach (Card c in cards)
                 {
                     if (c.IsFaceUp == false)
                     {
@@ -429,15 +437,16 @@ namespace WPF_TermProject_MemoryGame
                     }
                 }
 
+                //check after all cards are faced up
                 if (allCardsFaceUp == true)
                 {
-                    //MessageBox.Show($"player1:{player1.Score}, player2:{player2.Score}");
                     if (player1.Score > player2.Score)
                     {
                         playCongratsSound();
                         MessageBox.Show("Player1 win!");
 
                         playAgainOrNot();
+                        return;
                     }
                     else if (player2.Score > player1.Score)
                     {
@@ -445,6 +454,7 @@ namespace WPF_TermProject_MemoryGame
                         MessageBox.Show("Player2 win!");
 
                         playAgainOrNot();
+                        return;
                     }
                     else if (player1.Score == player2.Score)
                     {
@@ -452,6 +462,7 @@ namespace WPF_TermProject_MemoryGame
                         MessageBox.Show("It's a draw");
 
                         playAgainOrNot();
+                        return;
                     }
                 }
             }
@@ -475,23 +486,26 @@ namespace WPF_TermProject_MemoryGame
 
         private void playAgainOrNot()
         {
-            MessageBoxResult result = MessageBox.Show(
-                        "Do you want to play again? (No: back to menu)",
-                        "Confirmation",
-                        MessageBoxButton.YesNo,
-                        MessageBoxImage.Question
-                    );
+            frmConfirmation frmConfirmation = new frmConfirmation(this, gridMode, playerMode);
+            frmConfirmation.ShowDialog();
 
-            if (result == MessageBoxResult.No)
-            {
-                this.Close();
-            }
-            else if (result == MessageBoxResult.Yes)
-            {
-                this.Close();
-                frmGameView frmGameView = new frmGameView(gridMode, playerMode);
-                frmGameView.ShowDialog();
-            }
+            //MessageBoxResult result = MessageBox.Show(
+            //            "Do you want to play again? (No: back to menu)",
+            //            "Confirmation",
+            //            MessageBoxButton.YesNo,
+            //            MessageBoxImage.Question
+            //        );
+
+            //if (result == MessageBoxResult.No)
+            //{
+            //    this.Close();
+            //}
+            //else if (result == MessageBoxResult.Yes)
+            //{
+            //    this.Close();
+            //    frmGameView frmGameView = new frmGameView(gridMode, playerMode);
+            //    frmGameView.ShowDialog();
+            //}
         }
     }
 }

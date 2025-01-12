@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="frmConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="frmGameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -66,6 +70,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="frmConfirmation.xaml.cs">
+      <DependentUpon>frmConfirmation.xaml</DependentUpon>
     </Compile>
     <Compile Include="frmGameView.xaml.cs">
       <DependentUpon>frmGameView.xaml</DependentUpon>
@@ -160,6 +167,14 @@
     <Resource Include="Images\card34.jpg" />
     <Resource Include="Images\card35.jpg" />
     <Resource Include="Images\card36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\questionMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\continue.png" />
+    <Resource Include="Images\restart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

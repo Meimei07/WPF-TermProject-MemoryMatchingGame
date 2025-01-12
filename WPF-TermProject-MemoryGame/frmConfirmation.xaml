@@ -1,0 +1,90 @@
+﻿<Window x:Class="WPF_TermProject_MemoryGame.frmConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_TermProject_MemoryGame"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="Confirmation" Height="150" Width="300">
+    
+    <Border BorderThickness="1.5"
+            BorderBrush="LightGray"
+            Background="WhiteSmoke"
+            CornerRadius="8">
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.35*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+            
+            <!--row0 confirmation-->
+            <TextBlock Text="Confirmation" Padding="6,4,0,0"/>
+            
+            <!--row1-->
+            <StackPanel Grid.Row="1"
+                        Background="White"
+                        Orientation="Horizontal">
+                <Image 
+                    Source="/Images/questionMark.png"
+                    Width="26"
+                    Height="26"
+                    Margin="50,0,7,5"
+                />
+                <TextBlock 
+                    Text="Do you want to play again?" 
+                    FontSize="13"
+                    HorizontalAlignment="Center" 
+                    Margin="0,27"
+                />
+            </StackPanel>
+            
+            <!--row2 buttons-->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="btnRestart"
+                        Click="btnRestart_Click"
+                        
+                        Background="WhiteSmoke"
+                        BorderThickness="0"
+                        Margin="10,0">
+                    <Image 
+                        Source="/Images/restart.png"
+                        Width="26" 
+                        Height="26"
+                    />
+                </Button>
+                <Button Name="btnContinue"
+                        Click="btnContinue_Click"
+                        
+                        Background="WhiteSmoke"
+                        BorderThickness="0"
+                        Margin="10,0">
+                    <Image 
+                        Source="/Images/continue.png"
+                        Width="26"  
+                        Height="26"
+                    />
+                </Button>
+                <Button Name="btnClose"
+                        Click="btnClose_Click"
+                        
+                        Background="WhiteSmoke"
+                        BorderThickness="0"
+                        Margin="10,0">
+                    <Image 
+                        Source="/Images/close.png"
+                        Width="28"  
+                        Height="28"
+                    />
+                </Button>
+            </StackPanel>
+        </Grid>
+        
+    </Border>
+</Window>

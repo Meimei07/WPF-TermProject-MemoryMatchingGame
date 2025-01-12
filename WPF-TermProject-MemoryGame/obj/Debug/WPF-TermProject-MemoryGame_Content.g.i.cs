@@ -8,10 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/card32.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/card33.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/card34.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/card35.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/card36.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/close.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/continue.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/restart.png")]
 
 
