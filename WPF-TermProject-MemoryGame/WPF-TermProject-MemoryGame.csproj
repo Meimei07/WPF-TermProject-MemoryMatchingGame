@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="frmLoad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +80,9 @@
     </Compile>
     <Compile Include="frmGameView.xaml.cs">
       <DependentUpon>frmGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoad.xaml.cs">
+      <DependentUpon>frmLoad.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -111,9 +118,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\card1.png" />
     <Resource Include="Images\card10.png" />
     <Resource Include="Images\card11.png" />
@@ -132,7 +136,6 @@
     <Resource Include="Images\card23.png" />
     <Resource Include="Images\card24.png" />
     <Resource Include="Images\card25.png" />
-    <Resource Include="Images\card26.png" />
     <Resource Include="Images\card27.png" />
     <Resource Include="Images\card28.png" />
     <Resource Include="Images\card29.png" />
@@ -159,14 +162,6 @@
     <Resource Include="Images\card7.png" />
     <Resource Include="Images\card8.png" />
     <Resource Include="Images\card9.png" />
-    <Resource Include="Images\card_back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\card32.jpg" />
-    <Resource Include="Images\card33.jpg" />
-    <Resource Include="Images\card34.jpg" />
-    <Resource Include="Images\card35.jpg" />
-    <Resource Include="Images\card36.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\questionMark.png" />
@@ -175,6 +170,33 @@
     <Resource Include="Images\close.png" />
     <Resource Include="Images\continue.png" />
     <Resource Include="Images\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\card32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\card33.png" />
+    <Resource Include="Images\card34.png" />
+    <Resource Include="Images\card35.png" />
+    <Resource Include="Images\card36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\card26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Blueybackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TopBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\paleBlue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imageBackBlue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoadFormGroup12.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/close.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/continue.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/restart.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/loadformgroup12.png")]
 
 

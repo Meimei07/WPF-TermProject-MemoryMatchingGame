@@ -6,31 +6,39 @@
         xmlns:local="clr-namespace:WPF_TermProject_MemoryGame"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="frmGameView" Height="450" Width="800">
+        Title="Game View" Height="450" Width="800">
 
-    <Grid Background="#dcffdb">
+    <!--background-->
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/paleBlue.jpg"/>
+    </Window.Background>
+
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         
         <!--row0 player mode-->
-        <Grid Name="gridPlayerMode" Margin="10,0,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.15*"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="0.08*"/>
-            </Grid.ColumnDefinitions>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-        </Grid>
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+            <Grid Name="gridPlayerMode" Background="#CEE3FC">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.08*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Border>
         
         <!--row1 card images-->
-        <UniformGrid Grid.Row="1" Name="gridCard" Margin="20">
+        <UniformGrid Grid.Row="1" Name="gridCard" Margin="250 0">
             
         </UniformGrid>
     </Grid>

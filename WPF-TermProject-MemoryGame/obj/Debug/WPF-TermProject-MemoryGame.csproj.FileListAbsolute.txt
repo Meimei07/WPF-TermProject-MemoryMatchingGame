@@ -17,3 +17,5 @@ D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermP
 D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.csproj.CoreCompileInputs.cache
 D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.exe
 D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\WPF-TermProject-MemoryGame.pdb
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\frmLoad.g.cs
+D:\WPF\WPF-TermProject-MemoryGame\WPF-TermProject-MemoryGame\obj\Debug\frmLoad.baml

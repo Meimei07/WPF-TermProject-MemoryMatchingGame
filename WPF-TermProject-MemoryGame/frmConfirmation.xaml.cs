@@ -37,6 +37,7 @@ namespace WPF_TermProject_MemoryGame
             frmGameView.Close();
             this.Close();
 
+            //play the same grid mode and player
             frmGameView newFrmGameView = new frmGameView(gridMode, playerMode);
             newFrmGameView.ShowDialog();
         }
@@ -72,6 +73,7 @@ namespace WPF_TermProject_MemoryGame
                 gridSize = 0;
             }
 
+            //find the next grid size
             int continueGridSize = (int)Math.Pow((Math.Sqrt(gridSize) + 2), 2);
 
             if(continueGridSize == 16)
@@ -95,6 +97,7 @@ namespace WPF_TermProject_MemoryGame
                 gridMode = "";
             }
 
+            //play the next grid mode with the same player
             frmGameView newFrmGameView = new frmGameView(gridMode, playerMode);
             newFrmGameView.ShowDialog();
         }
@@ -103,6 +106,7 @@ namespace WPF_TermProject_MemoryGame
         {
             frmGameView.Close();
             this.Close();
+            //back to menu
         }
     }
 }

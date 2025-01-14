@@ -11,7 +11,23 @@
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
         Title="Confirmation" Height="150" Width="300">
-    
+
+    <!--remove all default styles of buttons-->
+    <Window.Resources>
+        <Style TargetType="Button">
+            <!-- Disable default style -->
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Border BorderThickness="1.5"
             BorderBrush="LightGray"
             Background="WhiteSmoke"
@@ -38,7 +54,7 @@
                     Margin="50,0,7,5"
                 />
                 <TextBlock 
-                    Text="Do you want to play again?" 
+                    Text="Do you want to play again?"
                     FontSize="13"
                     HorizontalAlignment="Center" 
                     Margin="0,27"
@@ -49,9 +65,7 @@
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="btnRestart"
                         Click="btnRestart_Click"
-                        
-                        Background="WhiteSmoke"
-                        BorderThickness="0"
+
                         Margin="10,0">
                     <Image 
                         Source="/Images/restart.png"
@@ -61,9 +75,7 @@
                 </Button>
                 <Button Name="btnContinue"
                         Click="btnContinue_Click"
-                        
-                        Background="WhiteSmoke"
-                        BorderThickness="0"
+
                         Margin="10,0">
                     <Image 
                         Source="/Images/continue.png"
@@ -74,8 +86,6 @@
                 <Button Name="btnClose"
                         Click="btnClose_Click"
                         
-                        Background="WhiteSmoke"
-                        BorderThickness="0"
                         Margin="10,0">
                     <Image 
                         Source="/Images/close.png"
